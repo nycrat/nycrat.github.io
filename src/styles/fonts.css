@@ -1,0 +1,47 @@
+/*
+	Font face declarations for compressed web version of Iosevka
+
+	https://github.com/be5invis/iosevka
+*/
+
+@font-face {
+  font-family: "Iosevka Web";
+  font-display: swap;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  src: url("/fonts/IosevkaWeb-Light.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+00A0-00FF, U+2000-206F;
+}
+
+@font-face {
+  font-family: "Iosevka Web";
+  font-display: swap;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: italic;
+  src: url("/fonts/IosevkaWeb-LightItalic.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+00A0-00FF, U+2000-206F;
+}
+
+/* only italic */
+@font-face {
+  font-family: "Iosevka Web";
+  font-display: swap;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: italic;
+  src: url("/fonts/IosevkaWeb-MediumItalic.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+00A0-00FF, U+2000-206F;
+}
+
+/* no italic */
+@font-face {
+  font-family: "Iosevka Web";
+  font-display: swap;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  src: url("/fonts/IosevkaWeb-Heavy.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+00A0-00FF, U+2000-206F;
+}

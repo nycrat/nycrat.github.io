@@ -1,55 +1,15 @@
 ---
-import "@styles/global.css";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Avah Xiao | nycrat.dev</title>
-
-    <!-- Pre-load all fonts -->
-    <link
-      rel="preload"
-      href="/fonts/IosevkaWeb-Light.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/IosevkaWeb-LightItalic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/IosevkaWeb-MediumItalic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/IosevkaWeb-Heavy.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <h1>This website is currently a work in progress</h1>
-    <ul>
-      <li><a href="https://instagram.com/avahxiao">Instagram</a></li>
-      <li><a href="https://blog.nycrat.dev">Blog</a></li>
-      <li><a href="https://www.linkedin.com/in/avahxiao/">LinkedIn</a></li>
-      <li><a href="https://github.com/nycrat">GitHub</a></li>
-      <li><a href="https://nycrat.dev/photography">Photography</a></li>
-      <li><a href="https://nycrat.dev/photo-gallery">Photo Gallery</a></li>
-    </ul>
-  </body>
-</html>
+<BaseLayout pageTitle="Avah Xiao">
+  <h1>This website is currently a work in progress</h1>
+  <ul>
+    <li><a href="https://instagram.com/avahxiao">Instagram</a></li>
+    <li><a href="https://blog.nycrat.dev">Blog</a></li>
+    <li><a href="https://www.linkedin.com/in/avahxiao/">LinkedIn</a></li>
+    <li><a href="https://github.com/nycrat">GitHub</a></li>
+    <li><a href="https://nycrat.dev/photography">Photography</a></li>
+    <li><a href="https://nycrat.dev/photo-gallery">Photo Gallery</a></li>
+  </ul>
+</BaseLayout>

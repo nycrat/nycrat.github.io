@@ -9,12 +9,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky"
   },
   "dependencies": {
     "astro": "^7.3.1"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "prettier": "^3.9.6"
   }
 }

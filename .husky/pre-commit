@@ -1,4 +1,7 @@
-pnpm exec prettier --check .
+# Don't exit when command returns non-zero exit code
+set +e
+
+pnpm exec prettier --check . &> /dev/null
 
 if [ $? -eq 1 ]; then
   pnpm exec prettier --write .

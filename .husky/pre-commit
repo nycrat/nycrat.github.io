@@ -1,6 +1,7 @@
-pnpm exec prettier --write .
+pnpm exec prettier --check .
 
-if ! git diff --quiet; then
+if [ $? -eq 1 ]; then
+  pnpm exec prettier --write .
   echo "Auto-formatting changes detected. Please stage them and commit again."
   exit 1
 fi

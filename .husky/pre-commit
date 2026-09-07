@@ -1,3 +1,5 @@
+pnpm astro check
+
 # Don't exit when command returns non-zero exit code
 set +e
 

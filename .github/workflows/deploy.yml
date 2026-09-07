@@ -27,7 +27,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
-        run: ASSET_CDN_URL=${{ secrets.ASSET_CDN_URL }} pnpm build
+        env:
+          ASSET_CDN_URL: ${{ secrets.ASSET_CDN_URL }}
+        run: ASSET_CDN_URL=$ASSET_CDN_URL pnpm build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

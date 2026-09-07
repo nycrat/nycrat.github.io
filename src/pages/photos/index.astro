@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Photos from "./photos.json";
 
-const ASSET_CDN_URL: string = import.meta.env.ASSET_CDN_URL;
+const ASSET_CDN_URL: string = "https://" + import.meta.env.ASSET_CDN_HOST;
 ---
 
 <BaseLayout pageTitle="Photography">

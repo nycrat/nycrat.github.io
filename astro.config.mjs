@@ -8,4 +8,12 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: import.meta.env.ASSET_CDN_HOST,
+      },
+    ],
+  },
 });

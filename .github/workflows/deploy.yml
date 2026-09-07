@@ -28,8 +28,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Build
         env:
-          ASSET_CDN_URL: ${{ secrets.ASSET_CDN_URL }}
-        run: ASSET_CDN_URL=$ASSET_CDN_URL pnpm build
+          ASSET_CDN_HOST: ${{ secrets.ASSET_CDN_HOST }}
+        run: pnpm build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

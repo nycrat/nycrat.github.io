@@ -8,12 +8,21 @@ const links = [
 ---
 
 <header>
-  <nav>
+  <nav class="content">
     <ul>
       {
         links.map((link) => (
           <li>
-            <a href={link.href}>{link.label}</a>
+            <a
+              href={link.href}
+              class:list={[
+                {
+                  active: Astro.url.pathname === link.href,
+                },
+              ]}
+            >
+              {link.label}
+            </a>
           </li>
         ))
       }
@@ -23,7 +32,6 @@ const links = [
 
 <style>
   header {
-    padding: 1rem 2rem;
     border-bottom: 1px solid var(--lightgray);
   }
 
@@ -39,7 +47,8 @@ const links = [
     text-decoration: none;
   }
 
-  a:hover {
+  a:hover,
+  .active {
     text-decoration: underline;
   }
 </style>

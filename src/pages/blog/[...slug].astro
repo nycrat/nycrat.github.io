@@ -19,18 +19,24 @@ Astro.locals.postSlug = post.id;
 
 <BaseLayout pageTitle={post.data.title}>
   <article>
-    <h1>{post.data.title}</h1>
-    <blockquote>{post.data.subtitle}</blockquote>
-    <time datetime={post.data.date.toISOString()}>
-      Published {post.data.date.toDateString()}
-    </time>
-    <br />
-    <br />
+    <header>
+      <h1>{post.data.title}</h1>
+      <blockquote>{post.data.subtitle}</blockquote>
+      <time datetime={post.data.date.toISOString()}>
+        Published {post.data.date.toDateString()}
+      </time>
+    </header>
     <Content components={{ img: MarkdownImage }} />
   </article>
 </BaseLayout>
 
 <style>
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   time {
     font-style: italic;
     color: var(--gray);

@@ -3,7 +3,7 @@
 
 body {
   font-family: "Iosevka Web", monospace;
-  font-size: 20px;
+  font-size: 18px;
 
   --purple: #672378;
   --gray: #666666;
@@ -18,4 +18,19 @@ a {
   max-width: 1000px;
   margin: auto;
   padding: 1rem 2rem;
+}
+
+h1 {
+  line-height: 1;
+  padding: 1rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 300%;
+  }
+}
+
+p:empty {
+  display: none;
 }

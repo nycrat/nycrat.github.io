@@ -2,10 +2,14 @@
 import { Image } from "astro:assets";
 
 const { src, alt, title } = Astro.props;
+const { postSlug } = Astro.locals;
+const ASSET_CDN_URL = `https://${import.meta.env.ASSET_CDN_HOST}`;
+
+const remoteSrc = `${ASSET_CDN_URL}/blog/${postSlug}/${src}`;
 ---
 
 <figure>
-  <Image src={src} alt={alt} title={title} widths={[1200]} inferSize />
+  <Image src={remoteSrc} alt={alt} title={title} widths={[1200]} inferSize />
   <figcaption>{alt}</figcaption>
 </figure>
 

@@ -7,5 +7,19 @@
       "/whistler/black-and-white-vertical-waterfall.jpeg",
       "/whistler/bridge-seen-through-bars.jpeg"
     ]
+  },
+  {
+    "name": "UBC Stolen Bikes",
+    "images": [
+      "/stolen-bikes/bicycle-child-stolen-back-wheel.jpg",
+      "/stolen-bikes/bicycle-norco-no-wheels.jpg",
+      "/stolen-bikes/bicycle-rack-seat-stolen.jpg",
+      "/stolen-bikes/bicycle-raleigh-no-wheels.jpg",
+      "/stolen-bikes/bicycle-raleigh-stolen-wheels.jpg",
+      "/stolen-bikes/bicycle-removed-chain-no-wheel.jpg",
+      "/stolen-bikes/bicycle-seat-stolen.jpg",
+      "/stolen-bikes/bicycle-supercycle-no-wheel.jpg",
+      "/stolen-bikes/bicycles-no-back-wheel.jpg"
+    ]
   }
 ]

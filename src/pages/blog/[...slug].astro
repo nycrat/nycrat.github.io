@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
 import MarkdownImage from "@components/MarkdownImage.astro";
 
 export async function getStaticPaths() {
@@ -17,7 +17,7 @@ const { Content } = await render(post);
 Astro.locals.postSlug = post.id;
 ---
 
-<BaseLayout pageTitle={post.data.title}>
+<ContentLayout pageTitle={post.data.title}>
   <article>
     <header>
       <h1>{post.data.title}</h1>
@@ -28,7 +28,7 @@ Astro.locals.postSlug = post.id;
     </header>
     <Content components={{ img: MarkdownImage }} />
   </article>
-</BaseLayout>
+</ContentLayout>
 
 <style>
   time {

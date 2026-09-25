@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
 import { ASSET_CDN_URL } from "@lib/constants";
 
 const posts = (await getCollection("blog")).sort(
@@ -9,7 +9,7 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<BaseLayout pageTitle="Blog">
+<ContentLayout pageTitle="Blog">
   {
     posts.map((post) => (
       <div class="post">
@@ -35,7 +35,7 @@ const posts = (await getCollection("blog")).sort(
       </div>
     ))
   }
-</BaseLayout>
+</ContentLayout>
 
 <style>
   .post:not(:last-child) {

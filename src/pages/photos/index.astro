@@ -2,8 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Photos from "./photos.json";
-
-const ASSET_CDN_URL: string = `https://${import.meta.env.ASSET_CDN_HOST}/portfolio`;
+import { ASSET_CDN_URL } from "@lib/constants";
 ---
 
 <BaseLayout pageTitle="Photography">
@@ -15,7 +14,7 @@ const ASSET_CDN_URL: string = `https://${import.meta.env.ASSET_CDN_HOST}/portfol
         <h2>{collection.name}</h2>
         {collection.images.map((path) => (
           <Image
-            src={ASSET_CDN_URL + path}
+            src={ASSET_CDN_URL + "/portfolio" + path}
             alt="Some image"
             width={900}
             height={600}

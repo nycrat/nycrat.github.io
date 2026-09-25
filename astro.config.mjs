@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import { preserveImageSrc } from "./src/lib/preserve-image-src-processor";
+import { preserveImageSrc } from "@lib/preserve-image-src-processor";
+import { ASSET_CDN_HOST } from "@lib/constants";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,7 +16,7 @@ export default defineConfig({
     remotePatterns: [
       {
         protocol: "https",
-        hostname: import.meta.env.ASSET_CDN_HOST,
+        hostname: ASSET_CDN_HOST,
       },
     ],
   },

@@ -1,27 +1,64 @@
 ---
-import ContentLayout from "@layouts/ContentLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Photos from "./photos.json";
 import { ASSET_CDN_URL } from "@lib/constants";
 ---
 
-<ContentLayout pageTitle="Photography">
-  <h1>Photo collections</h1>
-
-  {
-    Photos.map((collection) => (
-      <div>
-        <h2>{collection.name}</h2>
-        {collection.images.map((path) => (
+<BaseLayout pageTitle="Photography">
+  <main class="grid">
+    {
+      Photos.map((collection) => (
+        <div class="preview">
+          <div class="title">{collection.name}</div>
           <Image
-            src={ASSET_CDN_URL + "/portfolio" + path}
-            alt="Some image"
-            width={900}
-            height={600}
-            format="webp"
+            src={`${ASSET_CDN_URL}/portfolio${collection.images[0]}`}
+            alt={collection.images[0]}
+            widths={[1200]}
+            inferSize
           />
-        ))}
-      </div>
-    ))
+        </div>
+      ))
+    }
+  </main>
+</BaseLayout>
+
+<style>
+  img {
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: cover;
   }
-</ContentLayout>
+
+  .preview {
+    position: relative;
+  }
+
+  .title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    white-space: nowrap;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 0;
+  }
+
+  @media screen and (min-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>

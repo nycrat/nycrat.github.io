@@ -2,6 +2,7 @@
   {
     "name": "Whistler",
     "images": [
+      "/whistler/tall-waterfall-seen-through-leaves.jpeg",
       "/whistler/black-and-white-bird-stones.jpeg",
       "/whistler/black-and-white-construction-room.jpeg",
       "/whistler/black-and-white-vertical-waterfall.jpeg",
@@ -9,8 +10,9 @@
     ]
   },
   {
-    "name": "UBC Stolen Bikes",
+    "name": "Stolen Bikes",
     "images": [
+      "/stolen-bikes/bicycles-no-back-wheel.jpg",
       "/stolen-bikes/bicycle-child-stolen-back-wheel.jpg",
       "/stolen-bikes/bicycle-norco-no-wheels.jpg",
       "/stolen-bikes/bicycle-rack-seat-stolen.jpg",
@@ -18,8 +20,26 @@
       "/stolen-bikes/bicycle-raleigh-stolen-wheels.jpg",
       "/stolen-bikes/bicycle-removed-chain-no-wheel.jpg",
       "/stolen-bikes/bicycle-seat-stolen.jpg",
-      "/stolen-bikes/bicycle-supercycle-no-wheel.jpg",
-      "/stolen-bikes/bicycles-no-back-wheel.jpg"
+      "/stolen-bikes/bicycle-supercycle-no-wheel.jpg"
     ]
+  },
+  {
+    "name": "Beginnings",
+    "images": ["/beginner/rabbits-beside-bush.jpg"]
+  },
+  {
+    "name": "Golden Ears",
+    "images": ["/golden-ears/hiking-tall-climb-shift-lens.jpg"]
+  },
+  {
+    "name": "Western Washington",
+    "images": [
+      "/western_washington_university/half-light-shadow-ground.jpg",
+      "/western_washington_university/banjo-staircase-concrete.jpg"
+    ]
+  },
+  {
+    "name": "Bellingham",
+    "images": ["/bellingham-parks/leaves-dark-background.jpg"]
   }
 ]

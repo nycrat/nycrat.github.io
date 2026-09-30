@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  photoAlt,
+  photoCollections,
+  photoUrl,
+  type PhotoCollection,
+} from "@lib/photos";
+
+export function getStaticPaths() {
+  return photoCollections.map((collection, index) => ({
+    params: { collection: collection.slug },
+    props: { collection, index },
+  }));
+}
+
+interface Props {
+  collection: PhotoCollection;
+  index: number;
+}
+
+const { collection } = Astro.props;
+---
+
+<BaseLayout pageTitle={collection.name}>
+  <main>
+    <ul class="photos">
+      {
+        collection.images.map((image, imageIndex) => (
+          <li>
+            <Image
+              src={photoUrl(collection.slug, image)}
+              alt={photoAlt(image)}
+              widths={[1200]}
+              inferSize
+              priority={imageIndex === 0}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  .photos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 1;
+    column-gap: 0.25rem;
+  }
+
+  .photos li {
+    margin-bottom: 0.25rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .photos {
+      columns: 2;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .photos {
+      columns: 3;
+    }
+  }
+</style>

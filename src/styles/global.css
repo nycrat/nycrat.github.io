@@ -39,6 +39,11 @@ p:empty {
   display: none;
 }
 
+img {
+  height: auto;
+  object-fit: cover;
+}
+
 @media screen and (min-width: 600px) {
   h1 {
     font-size: 300%;

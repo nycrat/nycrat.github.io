@@ -1,23 +1,22 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import Photos from "./photos.json";
-import { ASSET_CDN_URL } from "@lib/constants";
+import { photoCollections, photoUrl } from "@lib/photos";
 ---
 
 <BaseLayout pageTitle="Photography">
   <main class="grid">
     {
-      Photos.map((collection) => (
-        <div class="preview">
+      photoCollections.map((collection) => (
+        <a class="preview" href={`/photos/${collection.slug}/`}>
           <div class="title">{collection.name}</div>
           <Image
-            src={`${ASSET_CDN_URL}/portfolio${collection.images[0]}`}
+            src={photoUrl(collection.slug, collection.images[0])}
             alt={collection.images[0]}
             widths={[1200]}
             inferSize
           />
-        </div>
+        </a>
       ))
     }
   </main>
@@ -25,9 +24,7 @@ import { ASSET_CDN_URL } from "@lib/constants";
 
 <style>
   img {
-    height: auto;
     aspect-ratio: 3/2;
-    object-fit: cover;
   }
 
   .preview {

@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Whistler",
+    "slug": "whistler",
+    "images": [
+      "tall-waterfall-seen-through-leaves.jpeg",
+      "black-and-white-bird-stones.jpeg",
+      "black-and-white-construction-room.jpeg",
+      "black-and-white-vertical-waterfall.jpeg",
+      "bridge-seen-through-bars.jpeg"
+    ]
+  },
+  {
+    "name": "Stolen Bikes",
+    "slug": "stolen-bikes",
+    "images": [
+      "bicycles-no-back-wheel.jpg",
+      "bicycle-child-stolen-back-wheel.jpg",
+      "bicycle-norco-no-wheels.jpg",
+      "bicycle-rack-seat-stolen.jpg",
+      "bicycle-raleigh-no-wheels.jpg",
+      "bicycle-raleigh-stolen-wheels.jpg",
+      "bicycle-removed-chain-no-wheel.jpg",
+      "bicycle-seat-stolen.jpg",
+      "bicycle-supercycle-no-wheel.jpg"
+    ]
+  },
+  {
+    "name": "Beginnings",
+    "slug": "beginner",
+    "images": ["rabbits-beside-bush.jpg"]
+  },
+  {
+    "name": "Golden Ears",
+    "slug": "golden-ears",
+    "images": ["hiking-tall-climb-shift-lens.jpg"]
+  },
+  {
+    "name": "Western Washington",
+    "slug": "western_washington_university",
+    "images": ["half-light-shadow-ground.jpg", "banjo-staircase-concrete.jpg"]
+  },
+  {
+    "name": "Bellingham",
+    "slug": "bellingham-parks",
+    "images": ["leaves-dark-background.jpg"]
+  }
+]

@@ -7,7 +7,22 @@
       "black-and-white-bird-stones.jpeg",
       "black-and-white-construction-room.jpeg",
       "black-and-white-vertical-waterfall.jpeg",
-      "bridge-seen-through-bars.jpeg"
+      "bridge-seen-through-bars.jpeg",
+      "canadian-flag-vancouver.jpeg",
+      "close-up-coloured-rocks.jpeg",
+      "grainy-sharp-waterfall.jpeg",
+      "grayscale-grid-building-concrete.jpeg",
+      "low-exposure-waterfall.jpeg",
+      "small-bird-looking-sideways.jpeg",
+      "small-bird-peeking-at-camera.jpeg",
+      "small-bird-standing-on-ground.jpeg",
+      "tilted-vancouver-building.jpeg",
+      "vancouver-graffiti.jpeg",
+      "vertical-numbers-architecture.jpeg",
+      "vertical-waterfall-light-shining.jpeg",
+      "waterfall-light-shining.jpeg",
+      "whistler-mountain.jpeg",
+      "whistler-waterfall-vertical.jpeg"
     ]
   },
   {
@@ -28,21 +43,98 @@
   {
     "name": "Beginnings",
     "slug": "beginner",
-    "images": ["rabbits-beside-bush.jpg"]
+    "images": [
+      "bird-in-tree.jpg",
+      "bird-standing-on-wood-post.jpg",
+      "bird-vertical.jpg",
+      "bird.jpg",
+      "blue-flowers.jpg",
+      "discovery-sport.jpg",
+      "dramatic-staring-into-camera.jpg",
+      "flower-blurry-background.jpg",
+      "flower-mountain-background.jpg",
+      "forest-in-smoke-vertical.jpg",
+      "forest-red-smoke.jpg",
+      "gloomy-mountain-trees.jpg",
+      "grass-vibrant.jpg",
+      "lock-on-tree-branch.jpg",
+      "pigeons.jpg",
+      "plants-mountain-background.jpg",
+      "polish-air-force-memorial.jpg",
+      "rabbit-close-up.jpg",
+      "rabbit-on-grass-vertical.jpg",
+      "rabbit-on-grass.jpg",
+      "rabbits-beside-bush.jpg",
+      "red-flowers.jpg",
+      "red-rose.jpg",
+      "robert-burns-statue.jpg",
+      "silhouette-sunset.jpg",
+      "smoke-from-forest.jpg",
+      "stars.jpg",
+      "sun-shining-tree-branch.jpg",
+      "sunset-behind-stick.jpg",
+      "sunset-steveston.jpg",
+      "telus-garden-vancouver.jpg",
+      "yellow-flowers.jpg",
+      "bird-in-garden.jpg"
+    ]
   },
   {
     "name": "Golden Ears",
     "slug": "golden-ears",
-    "images": ["hiking-tall-climb-shift-lens.jpg"]
+    "images": [
+      "hiking-tall-climb-shift-lens.jpg",
+      "golden-ears-looking-from-mountain.jpg",
+      "standing-on-rock-in-river.jpg",
+      "golden-ears-peak-vertical.jpg",
+      "golden-ears-peak.jpg",
+      "group-walking-on-flat-trail.jpg",
+      "hiking-tall-climb.jpg",
+      "rocks-in-river-low.jpg",
+      "rocks-in-river-under-bridge.jpg",
+      "rocks-in-river.jpg"
+    ]
   },
   {
     "name": "Western Washington",
     "slug": "western_washington_university",
-    "images": ["half-light-shadow-ground.jpg", "banjo-staircase-concrete.jpg"]
+    "images": [
+      "banjo-staircase-concrete.jpg",
+      "bike-leaning-on-concrete-grass.jpg",
+      "bike-next-to-table.jpg",
+      "biology-department-sign.jpg",
+      "building-pattern.jpg",
+      "bus.jpg",
+      "half-light-shadow-ground.jpg",
+      "photo-shoot.jpg",
+      "pit.jpg",
+      "red-sculpture.jpg",
+      "roller-blade-down-ramp.jpg",
+      "roller-blading.jpg",
+      "staircase-sculpture.jpg",
+      "studying-at-bench.jpg",
+      "walking-path.jpg"
+    ]
   },
   {
     "name": "Bellingham",
     "slug": "bellingham-parks",
-    "images": ["leaves-dark-background.jpg"]
+    "images": [
+      "sculpture-forest.jpg",
+      "bike-dog-trail.jpg",
+      "leaves-dark-background.jpg",
+      "leaves-sunshine.jpg",
+      "rust-sculpture.jpg",
+      "statue.jpg",
+      "tree-trunk.jpg",
+      "water-flow-bluured.jpg",
+      "water-reflection.jpg",
+      "water-through-bars.jpg",
+      "waterfall-black-and-white.jpg",
+      "waterfall-blurred.jpg",
+      "waterfall-taking-photos.jpg",
+      "white-flower-close-up.jpg",
+      "white-flower.jpg"
+    ]
   }
 ]

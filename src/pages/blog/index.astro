@@ -11,7 +11,7 @@ const posts = (await getCollection("blog")).sort(
 
 <ContentLayout pageTitle="Blog">
   {
-    posts.map((post) => (
+    posts.map((post, i) => (
       <div class="post">
         <h1>
           <a href={`/blog/${post.id}/`}>{post.data.title}</a>
@@ -31,6 +31,7 @@ const posts = (await getCollection("blog")).sort(
           alt={post.data.thumbnail}
           widths={[1200]}
           inferSize
+          priority={i === 0}
         />
       </div>
     ))

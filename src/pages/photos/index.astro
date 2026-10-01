@@ -7,7 +7,7 @@ import { photoCollections, photoUrl } from "@lib/photos";
 <BaseLayout pageTitle="Photography">
   <main class="grid">
     {
-      photoCollections.map((collection) => (
+      photoCollections.map((collection, i) => (
         <a class="preview" href={`/photos/${collection.slug}/`}>
           <div class="title">{collection.name}</div>
           <Image
@@ -15,6 +15,7 @@ import { photoCollections, photoUrl } from "@lib/photos";
             alt={collection.images[0]}
             widths={[1200]}
             inferSize
+            priority={i === 0}
           />
         </a>
       ))

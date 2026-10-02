@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import { preserveImageSrc } from "@lib/preserve-image-src-processor";
 import { ASSET_CDN_HOST } from "@lib/constants";
 
@@ -8,7 +9,12 @@ import { ASSET_CDN_HOST } from "@lib/constants";
 export default defineConfig({
   site: "https://nycrat.dev/",
   trailingSlash: "always",
-  integrations: [mdx({ processor: preserveImageSrc() })],
+  integrations: [
+    mdx({ processor: preserveImageSrc() }),
+    sitemap({
+      filter: (page) => !page.endsWith("/404/"),
+    }),
+  ],
   prefetch: {
     prefetchAll: true,
   },

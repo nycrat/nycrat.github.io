@@ -4,7 +4,10 @@ import { Image } from "astro:assets";
 import { photoCollections, photoUrl } from "@lib/photos";
 ---
 
-<BaseLayout pageTitle="Photography">
+<BaseLayout
+  pageTitle="Photography"
+  description="Photography collections by Avah Xiao."
+>
   <main class="grid">
     {
       photoCollections.map((collection, i) => (

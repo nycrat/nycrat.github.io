@@ -9,7 +9,10 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<ContentLayout pageTitle="Blog">
+<ContentLayout
+  pageTitle="Blog"
+  description="Blog posts on hackathons, robotics, engineering, and web development by Avah Xiao."
+>
   {
     posts.map((post, i) => (
       <div class="post">

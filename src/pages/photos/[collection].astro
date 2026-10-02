@@ -23,7 +23,10 @@ interface Props {
 const { collection } = Astro.props;
 ---
 
-<BaseLayout pageTitle={collection.name}>
+<BaseLayout
+  pageTitle={collection.name}
+  description={`A photo collection: ${collection.name} by Avah Xiao.`}
+>
   <main>
     <ul class="photos">
       {

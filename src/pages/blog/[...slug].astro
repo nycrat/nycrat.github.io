@@ -1,23 +1,56 @@
 ---
 import { getCollection, render } from "astro:content";
+import { getImage } from "astro:assets";
 import ContentLayout from "@layouts/ContentLayout.astro";
 import MarkdownImage from "@components/MarkdownImage.astro";
+import { ASSET_CDN_URL } from "@lib/constants";
+import { clampDescription } from "@lib/seo";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return Promise.all(
+    posts.map(async (post) => {
+      // Processed at build time and emitted under /_astro/ on our own domain,
+      // so the private CDN host never reaches the rendered page.
+      const { srcSet } = await getImage({
+        src: `${ASSET_CDN_URL}/blog/${post.id}/${post.data.thumbnail}`,
+        widths: [1200],
+        inferSize: true,
+      });
+
+      const [{ url, transform }] = srcSet.values;
+
+      return {
+        params: { slug: post.id },
+        props: {
+          post,
+          ogImage: {
+            src: url,
+            width: transform.width,
+            height: transform.height,
+          },
+        },
+      };
+    }),
+  );
 }
 
-const { post } = Astro.props;
+const { post, ogImage } = Astro.props;
 const { Content } = await render(post);
 
 Astro.locals.postSlug = post.id;
 ---
 
-<ContentLayout pageTitle={post.data.title}>
+<ContentLayout
+  pageTitle={post.data.title}
+  description={clampDescription(
+    `${post.data.subtitle} Topics: ${post.data.tags.join(", ")}.`,
+  )}
+  ogType="article"
+  ogImage={ogImage.src}
+  ogImageWidth={ogImage.width}
+  ogImageHeight={ogImage.height}
+>
   <article>
     <header>
       <h1>{post.data.title}</h1>

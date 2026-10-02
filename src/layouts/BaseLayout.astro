@@ -3,7 +3,29 @@ import "@styles/global.css";
 
 import Header from "@components/Header.astro";
 
-const { pageTitle, noindex = false } = Astro.props;
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_WIDTH,
+  SITE_TITLE,
+} from "@lib/seo";
+
+const {
+  pageTitle,
+  description = DEFAULT_DESCRIPTION,
+  ogImage = DEFAULT_OG_IMAGE,
+  ogImageWidth = ogImage === DEFAULT_OG_IMAGE ? OG_IMAGE_WIDTH : undefined,
+  ogImageHeight = ogImage === DEFAULT_OG_IMAGE ? OG_IMAGE_HEIGHT : undefined,
+  ogType = "website",
+  noindex = false,
+} = Astro.props;
+
+const siteTitle = SITE_TITLE;
+const fullTitle = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site);
 ---
 
 <html lang="en">
@@ -14,7 +36,33 @@ const { pageTitle, noindex = false } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     {noindex && <meta name="robots" content="noindex" />}
-    <title>{pageTitle} | nycrat.dev</title>
+    <title>{fullTitle}</title>
+
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    {
+      ogImageWidth && (
+        <meta property="og:image:width" content={String(ogImageWidth)} />
+      )
+    }
+    {
+      ogImageHeight && (
+        <meta property="og:image:height" content={String(ogImageHeight)} />
+      )
+    }
+    <meta property="og:image:alt" content={pageTitle ?? siteTitle} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- Pre-load all fonts -->
     <link

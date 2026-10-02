@@ -1,12 +1,24 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import { photoCollections, photoUrl } from "@lib/photos";
+import { firstPhoto, photoCollections, photoUrl } from "@lib/photos";
+import { ogImageFromCdn } from "@lib/seo";
+
+const [first] = photoCollections;
+
+if (!first) {
+  throw new Error("photos.json contains no collections");
+}
+
+const ogImage = await ogImageFromCdn(photoUrl(first.slug, firstPhoto(first)));
 ---
 
 <BaseLayout
   pageTitle="Photography"
   description="Photography collections by Avah Xiao."
+  ogImage={ogImage.src}
+  ogImageWidth={ogImage.width}
+  ogImageHeight={ogImage.height}
 >
   <main class="grid">
     {

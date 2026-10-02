@@ -1,37 +1,22 @@
 ---
 import { getCollection, render } from "astro:content";
-import { getImage } from "astro:assets";
 import ContentLayout from "@layouts/ContentLayout.astro";
 import MarkdownImage from "@components/MarkdownImage.astro";
 import { ASSET_CDN_URL } from "@lib/constants";
-import { clampDescription } from "@lib/seo";
+import { clampDescription, ogImageFromCdn } from "@lib/seo";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return Promise.all(
-    posts.map(async (post) => {
-      // Processed at build time and emitted under /_astro/ on our own domain,
-      // so the private CDN host never reaches the rendered page.
-      const { srcSet } = await getImage({
-        src: `${ASSET_CDN_URL}/blog/${post.id}/${post.data.thumbnail}`,
-        widths: [1200],
-        inferSize: true,
-      });
-
-      const [{ url, transform }] = srcSet.values;
-
-      return {
-        params: { slug: post.id },
-        props: {
-          post,
-          ogImage: {
-            src: url,
-            width: transform.width,
-            height: transform.height,
-          },
-        },
-      };
-    }),
+    posts.map(async (post) => ({
+      params: { slug: post.id },
+      props: {
+        post,
+        ogImage: await ogImageFromCdn(
+          `${ASSET_CDN_URL}/blog/${post.id}/${post.data.thumbnail}`,
+        ),
+      },
+    })),
   );
 }
 

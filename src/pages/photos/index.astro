@@ -26,8 +26,8 @@ const ogImage = await ogImageFromCdn(photoUrl(first.slug, firstPhoto(first)));
         <a class="preview" href={`/photos/${collection.slug}/`}>
           <div class="title">{collection.name}</div>
           <Image
-            src={photoUrl(collection.slug, collection.images[0])}
-            alt={collection.images[0]}
+            src={photoUrl(collection.slug, firstPhoto(collection))}
+            alt=""
             widths={[1200]}
             inferSize
             priority={i === 0}

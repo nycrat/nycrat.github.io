@@ -31,7 +31,7 @@ const posts = (await getCollection("blog")).sort(
 
         <Image
           src={`${ASSET_CDN_URL}/blog/${post.id}/${post.data.thumbnail}`}
-          alt={post.data.thumbnail}
+          alt={post.data.title}
           widths={[1200]}
           inferSize
           priority={i === 0}
